@@ -117,6 +117,34 @@ export class Driller extends React.Component<{}, DrillerState> {
             </Form>
           </Col>
         </Row>
+        <Row>
+          Assorted notes:
+          <pre>
+            {`default scale is major  C       -> C E G
+default 7 is dominant   C7      -> C E G Bb
+minor is minor          Cm      -> C Eb G
+minor 7 is dominant     Cm7     -> C Eb G Bb
+major 7 is major 7      Cmaj7   -> C E G B
+6 is major 6            C6      -> C E G A
++ is augmented 5        C+7     -> C E G# Bb
+dim is diminish 5       Cdim7   -> C Eb Gb A
+b5 is flat 5            C7b5    -> C E Gb Bb
+9 can be replaced by 7  C9 <=> C7
+sustain means 3 -> 4    Csus    -> C F G (popular with Uncle Michael songs)
+anything above 9 can be ignored
+
+
+c maj -> c augment (#5)
+    as
+c min -> c diminish (b5)
+
+augmented chords are composed of 3 major thirds
+diminished chords are composed of 4 minor thirds
+
+augmented 7 chords add dominant 7
+there are 3 diminished chords and all others can be expressed as inversions`}
+          </pre>
+        </Row>
       </Container>
     }
   }
