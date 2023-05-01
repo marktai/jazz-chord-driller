@@ -90,7 +90,7 @@ class NameChord extends React.Component<NameChordProps, NameChordState> {
           </Col>
           <Col xs={12} md={8} style={{ visibility: this.state.revealed ? 'visible': 'hidden' }}>
             <div>In Treble Clef</div>
-            <img src={this.fullImageLink()} />
+            <img style={{'maxWidth': '100%'}} src={this.fullImageLink()} />
           </Col>
         </Row>
       </Container>
