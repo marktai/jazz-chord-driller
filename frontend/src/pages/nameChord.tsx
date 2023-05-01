@@ -1,7 +1,7 @@
 import React from 'react';
 import CloverService from '../api';
 import { GameType } from '../api';
-import {Container, Row, Col, NameChordGroup, Button} from 'react-bootstrap';
+import {Container, Row, Col, List, Button} from 'react-bootstrap';
 import {
   Link,
   useNavigate,
@@ -13,19 +13,36 @@ type NameChordProps = {
 };
 
 type NameChordState = {
-  revealed: boolean
+  revealed: boolean,
+  nextToggleEnable: number,
 };
 
 class NameChord extends React.Component<NameChordProps, NameChordState> {
   state: NameChordState = {
     // games: null,
     revealed: false,
+    nextToggleEnable: 0,
   };
 
-  async componentDidMount() {
+  toggleRevealed() {
+    this.setState({
+      ...this.state,
+      nextToggleEnable: Date.now() + 100,
+      revealed: !this.state.revealed,
+    });
   }
 
-  async componentDidUpdate(prevProps: NameChordProps) {
+  componentDidMount() {
+    document.addEventListener("keydown", (event) => {
+      if (!event.repeat && Date.now() > this.state.nextToggleEnable) {
+
+        console.log(event);
+        this.toggleRevealed();
+      }
+    }, false);
+  }
+
+  componentDidUpdate(prevProps: NameChordProps) {
     if (prevProps.chord != this.props.chord) {
       this.setState({
         ...this.state,
@@ -41,14 +58,6 @@ class NameChord extends React.Component<NameChordProps, NameChordState> {
 
   fullImageLink() {
     return `/static2/full/${encodeURIComponent(this.props.chord)}.png`;
-  }
-
-  handleClick(){
-    console.log(this);
-    return this.setState({
-      ...this.state,
-      revealed: !this.state.revealed
-    });
   }
 
   render() {
@@ -72,7 +81,7 @@ class NameChord extends React.Component<NameChordProps, NameChordState> {
 
     return (
       <Container 
-        onClick={() => {this.handleClick()}} 
+        onClick={() => {this.toggleRevealed()}} 
         // className={"NameChord" + (this.props.wordNameChord !== "default" ? ` ${this.props.wordNameChord}` : "")}
       >
         <Row>
