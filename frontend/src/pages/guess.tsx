@@ -158,46 +158,46 @@ export class Guess extends React.Component<GuessProps, GuessState> {
     })
   }
 
-  async componentDidMount() {
-    const game = await CloverService.getGame(this.props.id);
+  // async componentDidMount() {
+  //   const game = await CloverService.getGame(this.props.id);
 
-    const saved = localStorage.getItem(this.stateKey());
-    let savedState = {};
-    if (saved !== null) {
-      savedState = JSON.parse(saved)
-    }
+  //   const saved = localStorage.getItem(this.stateKey());
+  //   let savedState = {};
+  //   if (saved !== null) {
+  //     savedState = JSON.parse(saved)
+  //   }
 
-    const defaultGuessState = {
-      guess: {
-        cardPositions: (game?.suggested_possible_cards as Array<CardType>).map( (_, i) => [i, 0]),
-        currentSelectedCard: null,
-      }
-    };
+  //   const defaultGuessState = {
+  //     guess: {
+  //       cardPositions: (game?.suggested_possible_cards as Array<CardType>).map( (_, i) => [i, 0]),
+  //       currentSelectedCard: null,
+  //     }
+  //   };
 
-    if (this.interval === null) {
-      this.interval = setInterval(() => { this.pollPushPull() }, pollInterval);
-    }
+  //   if (this.interval === null) {
+  //     this.interval = setInterval(() => { this.pollPushPull() }, pollInterval);
+  //   }
 
-    if (this.ws === null) {
-      const ws_protocol = location.protocol === 'http:' ? 'ws:' : 'wss:';
-      this.ws = new WebSocket(`${ws_protocol}//${window.location.host}/ws/listen/${this.props.id}`);
-      this.ws.onmessage = (event) => {
-        const message: any = JSON.parse(event.data);
-        if (message.type === 'GAME_UPDATE') {
-          this.pullClientState(message.data);
-        }
-      };
-    }
+  //   if (this.ws === null) {
+  //     const ws_protocol = location.protocol === 'http:' ? 'ws:' : 'wss:';
+  //     this.ws = new WebSocket(`${ws_protocol}//${window.location.host}/ws/listen/${this.props.id}`);
+  //     this.ws.onmessage = (event) => {
+  //       const message: any = JSON.parse(event.data);
+  //       if (message.type === 'GAME_UPDATE') {
+  //         this.pullClientState(message.data);
+  //       }
+  //     };
+  //   }
 
-    await this.setStateWithWrite({
-      ...defaultGuessState,
-      ...savedState,
-      game: game,
-      copiedToClipboard: false,
-    }, false);
+  //   await this.setStateWithWrite({
+  //     ...defaultGuessState,
+  //     ...savedState,
+  //     game: game,
+  //     copiedToClipboard: false,
+  //   }, false);
 
-    await this.pullClientState();
-  }
+  //   await this.pullClientState();
+  // }
   componentWillUnmount() {
     if (this.interval !== null) {
       clearInterval(this.interval);
