@@ -102,7 +102,7 @@ export class Driller extends React.Component<{}, DrillerState> {
                   type={'checkbox'}
                   key={modifierChoice[0]}
                   id={modifierChoice[0]}
-                  label={modifierChoice[0]}
+                  label={modifierChoice[0] === '' ? 'maj': modifierChoice[0]}
                   checked={modifierChoice[1]}
                   onChange={(evt) => {
                     let newModifierChoices = JSON.parse(JSON.stringify(this.state.modifierChoices));
