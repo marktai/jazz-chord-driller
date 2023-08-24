@@ -1,7 +1,7 @@
 import React from 'react';
 import CloverService from '../api';
 import { GameType } from '../api';
-import {Container, Row, Col, List, Button} from 'react-bootstrap';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 import {
   Link,
   useNavigate,
@@ -38,8 +38,19 @@ class NameChord extends React.Component<NameChordProps, NameChordState> {
 
         console.log(event);
         this.toggleRevealed();
+        e.preventDefault();
+
+      }
+      
+      if(e.keyCode == 32 && e.target == document.body) {
+        e.preventDefault();
       }
     }, false);
+    window.addEventListener('keydown', function(e) {
+        if(e.keyCode == 32 && e.target == document.body) {
+              e.preventDefault();
+            }
+    });
   }
 
   componentDidUpdate(prevProps: NameChordProps) {
@@ -84,9 +95,10 @@ class NameChord extends React.Component<NameChordProps, NameChordState> {
         onClick={() => {this.toggleRevealed()}} 
         // className={"NameChord" + (this.props.wordNameChord !== "default" ? ` ${this.props.wordNameChord}` : "")}
       >
-        <Row>
+        <Row style={{'min-height': '700px'}}>
           <Col xs={12} md={4}>
-            <img src={this.chordNameImageLink()}/>
+            <div style={{'min-height': '120px'}}> <img src={this.chordNameImageLink()}/> </div>
+            <div>Click the above chord symbol or type any letter to see the full chord!</div>
           </Col>
           <Col xs={12} md={8} style={{ visibility: this.state.revealed ? 'visible': 'hidden' }}>
             <div>In Treble Clef</div>

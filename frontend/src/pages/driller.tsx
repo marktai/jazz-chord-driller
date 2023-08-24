@@ -71,9 +71,12 @@ export class Driller extends React.Component<{}, DrillerState> {
           <NameChord chord={this.state.chord}/>
         </Row>
         <Row>
+          <h4>Which chords?</h4>
+        </Row>
+        <Row>
           <Col xs={12} md={4}>
             <Form>
-              Key
+              <b>Key</b>
               { this.state.chordChoices.map((chordChoice, index) =>
                 <Form.Check
                   type={'checkbox'}
@@ -96,7 +99,7 @@ export class Driller extends React.Component<{}, DrillerState> {
 
           <Col xs={12} md={4}>
             <Form>
-              Chord Type
+              <b>Chord Type</b>
               { this.state.modifierChoices.map((modifierChoice, index) =>
                 <Form.Check
                   type={'checkbox'}
@@ -118,7 +121,7 @@ export class Driller extends React.Component<{}, DrillerState> {
           </Col>
         </Row>
         <Row>
-          Assorted notes:
+          <b>Assorted notes:</b>
           <pre>
             {`default scale is major  C       -> C E G
 default 7 is dominant   C7      -> C E G Bb
