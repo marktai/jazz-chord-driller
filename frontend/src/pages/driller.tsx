@@ -130,7 +130,8 @@ minor 7 is dominant     Cm7     -> C Eb G Bb
 major 7 is major 7      Cmaj7   -> C E G B
 6 is major 6            C6      -> C E G A
 + is augmented 5        C+7     -> C E G# Bb
-dim is diminish 5       Cdim7   -> C Eb Gb A
+m7b5 b3 b5 b7           Cm7b5   -> C Eb Gb Bb
+dim b3 b5 bb7           Cdim7   -> C Eb Gb A
 b5 is flat 5            C7b5    -> C E Gb Bb
 9 can be replaced by 7  C9 <=> C7
 sustain means 3 -> 4    Csus    -> C F G (popular with Uncle Michael songs)
