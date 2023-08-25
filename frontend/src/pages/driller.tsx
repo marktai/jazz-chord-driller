@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CloverService, { GameType } from '../api';
-import {Container, Row, Col, List, Form} from 'react-bootstrap';
+import {Container, Row, Col, Form} from 'react-bootstrap';
 import NameChord from './nameChord';
 
 const chords = [
@@ -62,10 +62,9 @@ export class Driller extends React.Component<{}, DrillerState> {
       return <div> <img className="loader" src="https://www.marktai.com/download/54689/ZZ5H.gif"/> </div>
     } else {
 
-      console.log(this.state.chordChoices);
       return <Container>
         <Row>
-          <button className={"btn btn-primary"} onClick={() => {this.setState({chord: this.generateRandomChord()})}}>New Chord!</button>
+          <button className={"btn btn-primary"} type={"button"} onClick={() => {this.setState({chord: this.generateRandomChord()})}}>New Chord!</button>
         </Row>
         <Row>
           <NameChord chord={this.state.chord}/>
@@ -77,6 +76,26 @@ export class Driller extends React.Component<{}, DrillerState> {
           <Col xs={12} md={4}>
             <Form>
               <b>Key</b>
+              <div><button 
+                className={"btn btn-primary"} 
+                type={"button"}
+                onClick={
+                  () => {
+                    let someTrue = this.state.chordChoices.map( (c) => c[1] ).some((x) => !!x);
+                    let newMap = JSON.parse(JSON.stringify(this.state.chordChoices));
+                    newMap.map( (c) => {
+                      c[1] = !someTrue;
+                    });
+
+                    this.setState({
+                      ...this.state,
+                      chordChoices: newMap,
+                    });
+                  }
+                }
+              >{
+                this.state.chordChoices.map( (c) => c[1] ).some((x) => !!x) ? 'Turn keys all off' : 'Turn keys all on'
+              }</button></div>
               { this.state.chordChoices.map((chordChoice, index) =>
                 <Form.Check
                   type={'checkbox'}
@@ -100,6 +119,26 @@ export class Driller extends React.Component<{}, DrillerState> {
           <Col xs={12} md={4}>
             <Form>
               <b>Chord Type</b>
+              <div><button 
+                className={"btn btn-primary"} 
+                type={"button"}
+                onClick={
+                  () => {
+                    let someTrue = this.state.modifierChoices.map( (c) => c[1] ).some((x) => !!x);
+                    let newMap = JSON.parse(JSON.stringify(this.state.modifierChoices));
+                    newMap.map( (c) => {
+                      c[1] = !someTrue;
+                    });
+
+                    this.setState({
+                      ...this.state,
+                      modifierChoices: newMap,
+                    });
+                  }
+                }
+              >{
+                this.state.modifierChoices.map( (c) => c[1] ).some((x) => !!x) ? 'Turn keys all off' : 'Turn keys all on'
+              }</button></div>
               { this.state.modifierChoices.map((modifierChoice, index) =>
                 <Form.Check
                   type={'checkbox'}

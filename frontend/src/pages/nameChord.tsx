@@ -38,12 +38,12 @@ class NameChord extends React.Component<NameChordProps, NameChordState> {
 
         console.log(event);
         this.toggleRevealed();
-        e.preventDefault();
+        event.preventDefault();
 
       }
       
-      if(e.keyCode == 32 && e.target == document.body) {
-        e.preventDefault();
+      if(event.keyCode == 32 && event.target == document.body) {
+        event.preventDefault();
       }
     }, false);
     window.addEventListener('keydown', function(e) {
@@ -60,7 +60,6 @@ class NameChord extends React.Component<NameChordProps, NameChordState> {
         revealed: false,
       });
     }
-    console.log(this.props.chord);
   }
 
   chordNameImageLink() {
@@ -95,9 +94,9 @@ class NameChord extends React.Component<NameChordProps, NameChordState> {
         onClick={() => {this.toggleRevealed()}} 
         // className={"NameChord" + (this.props.wordNameChord !== "default" ? ` ${this.props.wordNameChord}` : "")}
       >
-        <Row style={{'min-height': '700px'}}>
+        <Row style={{'minHeight': '700px'}}>
           <Col xs={12} md={4}>
-            <div style={{'min-height': '120px'}}> <img src={this.chordNameImageLink()}/> </div>
+            <div style={{'minHeight': '120px'}}> <img src={this.chordNameImageLink()}/> </div>
             <div>Click the above chord symbol or type any letter to see the full chord!</div>
           </Col>
           <Col xs={12} md={8} style={{ visibility: this.state.revealed ? 'visible': 'hidden' }}>

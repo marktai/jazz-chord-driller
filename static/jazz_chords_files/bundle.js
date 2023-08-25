@@ -181,11 +181,11 @@ class Driller extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
         columnNumber: 14
       }, this);
     } else {
-      console.log(this.state.chordChoices);
       return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
         children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("button", {
             className: "btn btn-primary",
+            type: "button",
             onClick: () => {
               this.setState({
                 chord: this.generateRandomChord()
@@ -194,36 +194,36 @@ class Driller extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
             children: "New Chord!"
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 68,
+            lineNumber: 67,
             columnNumber: 11
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 67,
+          lineNumber: 66,
           columnNumber: 9
         }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(_nameChord__WEBPACK_IMPORTED_MODULE_1__["default"], {
             chord: this.state.chord
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 71,
+            lineNumber: 70,
             columnNumber: 11
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 70,
+          lineNumber: 69,
           columnNumber: 9
         }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("h4", {
-            children: "Which chords?:"
+            children: "Which chords?"
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 74,
+            lineNumber: 73,
             columnNumber: 11
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 73,
+          lineNumber: 72,
           columnNumber: 9
         }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -232,6 +232,30 @@ class Driller extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
             children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
               children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("b", {
                 children: "Key"
+              }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 78,
+                columnNumber: 15
+              }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("div", {
+                children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("button", {
+                  className: "btn btn-primary",
+                  type: "button",
+                  onClick: () => {
+                    let someTrue = this.state.chordChoices.map(c => c[1]).some(x => !!x);
+                    let newMap = JSON.parse(JSON.stringify(this.state.chordChoices));
+                    newMap.map(c => {
+                      c[1] = !someTrue;
+                    });
+                    this.setState({ ...this.state,
+                      chordChoices: newMap
+                    });
+                  },
+                  children: this.state.chordChoices.map(c => c[1]).some(x => !!x) ? 'Turn keys all off' : 'Turn keys all on'
+                }, void 0, false, {
+                  fileName: _jsxFileName,
+                  lineNumber: 79,
+                  columnNumber: 20
+                }, this)
               }, void 0, false, {
                 fileName: _jsxFileName,
                 lineNumber: 79,
@@ -250,17 +274,17 @@ class Driller extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
                 }
               }, chordChoice[0], false, {
                 fileName: _jsxFileName,
-                lineNumber: 81,
+                lineNumber: 100,
                 columnNumber: 17
               }, this))]
             }, void 0, true, {
               fileName: _jsxFileName,
-              lineNumber: 78,
+              lineNumber: 77,
               columnNumber: 13
             }, this)
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 77,
+            lineNumber: 76,
             columnNumber: 11
           }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
             xs: 12,
@@ -270,7 +294,31 @@ class Driller extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
                 children: "Chord Type"
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 102,
+                lineNumber: 121,
+                columnNumber: 15
+              }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("div", {
+                children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("button", {
+                  className: "btn btn-primary",
+                  type: "button",
+                  onClick: () => {
+                    let someTrue = this.state.modifierChoices.map(c => c[1]).some(x => !!x);
+                    let newMap = JSON.parse(JSON.stringify(this.state.modifierChoices));
+                    newMap.map(c => {
+                      c[1] = !someTrue;
+                    });
+                    this.setState({ ...this.state,
+                      modifierChoices: newMap
+                    });
+                  },
+                  children: this.state.modifierChoices.map(c => c[1]).some(x => !!x) ? 'Turn keys all off' : 'Turn keys all on'
+                }, void 0, false, {
+                  fileName: _jsxFileName,
+                  lineNumber: 122,
+                  columnNumber: 20
+                }, this)
+              }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 122,
                 columnNumber: 15
               }, this), this.state.modifierChoices.map((modifierChoice, index) => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"].Check, {
                 type: 'checkbox',
@@ -286,29 +334,29 @@ class Driller extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
                 }
               }, modifierChoice[0], false, {
                 fileName: _jsxFileName,
-                lineNumber: 104,
+                lineNumber: 143,
                 columnNumber: 17
               }, this))]
             }, void 0, true, {
               fileName: _jsxFileName,
-              lineNumber: 101,
+              lineNumber: 120,
               columnNumber: 13
             }, this)
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 100,
+            lineNumber: 119,
             columnNumber: 11
           }, this)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 76,
+          lineNumber: 75,
           columnNumber: 9
         }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("b", {
             children: "Assorted notes:"
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 124,
+            lineNumber: 163,
             columnNumber: 11
           }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("pre", {
             children: `default scale is major  C       -> C E G
@@ -338,17 +386,30 @@ augmented 7 chords add dominant 7
 there are 3 diminished chords and all others can be expressed as inversions`
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 125,
+            lineNumber: 164,
+            columnNumber: 11
+          }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("div", {
+            children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("a", {
+              href: "https://www.marktai.com/download/me/music/jazz_practice_sheet.pdf",
+              children: "Full practice score"
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 191,
+              columnNumber: 16
+            }, this)
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 191,
             columnNumber: 11
           }, this)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 123,
+          lineNumber: 162,
           columnNumber: 9
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 65,
         columnNumber: 14
       }, this);
     }
@@ -359,7 +420,7 @@ there are 3 diminished chords and all others can be expressed as inversions`
 const DrillerContainer = () => {
   return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(Driller, {}, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 157,
+    lineNumber: 199,
     columnNumber: 10
   }, undefined);
 };
@@ -451,11 +512,11 @@ class NameChord extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component)
       if (!event.repeat && Date.now() > this.state.nextToggleEnable) {
         console.log(event);
         this.toggleRevealed();
-        e.preventDefault();
+        event.preventDefault();
       }
 
-      if (e.keyCode == 32 && e.target == document.body) {
-        e.preventDefault();
+      if (event.keyCode == 32 && event.target == document.body) {
+        event.preventDefault();
       }
     }, false);
     window.addEventListener('keydown', function (e) {
@@ -471,8 +532,6 @@ class NameChord extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component)
         revealed: false
       });
     }
-
-    console.log(this.props.chord);
   }
 
   chordNameImageLink() {
@@ -507,36 +566,36 @@ class NameChord extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component)
       ,
       children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
         style: {
-          'min-height': '700px'
+          'minHeight': '700px'
         },
         children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
           xs: 12,
           md: 4,
           children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("div", {
             style: {
-              'min-height': '120px'
+              'minHeight': '120px'
             },
             children: [" ", /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("img", {
               src: this.chordNameImageLink()
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 100,
-              columnNumber: 51
+              lineNumber: 99,
+              columnNumber: 50
             }, this), " "]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 100,
+            lineNumber: 99,
             columnNumber: 13
           }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("div", {
             children: "Click the above chord symbol or type any letter to see the full chord!"
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 101,
+            lineNumber: 100,
             columnNumber: 13
           }, this)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 99,
+          lineNumber: 98,
           columnNumber: 11
         }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
           xs: 12,
@@ -548,7 +607,7 @@ class NameChord extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component)
             children: "In Treble Clef"
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 104,
+            lineNumber: 103,
             columnNumber: 13
           }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("img", {
             style: {
@@ -557,22 +616,22 @@ class NameChord extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component)
             src: this.fullImageLink()
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 105,
+            lineNumber: 104,
             columnNumber: 13
           }, this)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 103,
+          lineNumber: 102,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 98,
+        lineNumber: 97,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 93,
       columnNumber: 7
     }, this);
   }
@@ -52011,7 +52070,7 @@ function _extends() {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("41c5540a013ba40300db")
+/******/ 		__webpack_require__.h = () => ("cbee12c75c1e71247b0d")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
