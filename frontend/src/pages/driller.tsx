@@ -149,6 +149,7 @@ diminished chords are composed of 4 minor thirds
 augmented 7 chords add dominant 7
 there are 3 diminished chords and all others can be expressed as inversions`}
           </pre>
+          <div><a href="https://www.marktai.com/download/me/music/jazz_practice_sheet.pdf">Full practice score</a></div>
         </Row>
       </Container>
     }
