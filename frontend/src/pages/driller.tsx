@@ -94,7 +94,7 @@ export class Driller extends React.Component<{}, DrillerState> {
                   }
                 }
               >{
-                this.state.chordChoices.map( (c) => c[1] ).some((x) => !!x) ? 'Turn keys all off' : 'Turn keys all on'
+                this.state.chordChoices.map( (c) => c[1] ).some((x) => !!x) ? 'Turn all keys off' : 'Turn all keys on'
               }</button></div>
               { this.state.chordChoices.map((chordChoice, index) =>
                 <Form.Check
@@ -137,7 +137,7 @@ export class Driller extends React.Component<{}, DrillerState> {
                   }
                 }
               >{
-                this.state.modifierChoices.map( (c) => c[1] ).some((x) => !!x) ? 'Turn keys all off' : 'Turn keys all on'
+                this.state.modifierChoices.map( (c) => c[1] ).some((x) => !!x) ? 'Turn all chord types off' : 'Turn all chord types on'
               }</button></div>
               { this.state.modifierChoices.map((modifierChoice, index) =>
                 <Form.Check

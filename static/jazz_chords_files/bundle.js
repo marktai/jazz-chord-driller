@@ -250,7 +250,7 @@ class Driller extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
                       chordChoices: newMap
                     });
                   },
-                  children: this.state.chordChoices.map(c => c[1]).some(x => !!x) ? 'Turn keys all off' : 'Turn keys all on'
+                  children: this.state.chordChoices.map(c => c[1]).some(x => !!x) ? 'Turn all keys off' : 'Turn all keys on'
                 }, void 0, false, {
                   fileName: _jsxFileName,
                   lineNumber: 79,
@@ -310,7 +310,7 @@ class Driller extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
                       modifierChoices: newMap
                     });
                   },
-                  children: this.state.modifierChoices.map(c => c[1]).some(x => !!x) ? 'Turn keys all off' : 'Turn keys all on'
+                  children: this.state.modifierChoices.map(c => c[1]).some(x => !!x) ? 'Turn all chord types off' : 'Turn all chord types on'
                 }, void 0, false, {
                   fileName: _jsxFileName,
                   lineNumber: 122,
@@ -52070,7 +52070,7 @@ function _extends() {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("cbee12c75c1e71247b0d")
+/******/ 		__webpack_require__.h = () => ("3fd9483d496728fa3005")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
