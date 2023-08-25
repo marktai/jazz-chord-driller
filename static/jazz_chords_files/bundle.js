@@ -321,6 +321,7 @@ major 7 is major 7      Cmaj7   -> C E G B
 m7b5 b3 b5 b7           Cm7b5   -> C Eb Gb Bb
 dim7 b3 b5 bb7          Cdim7   -> C Eb Gb A
 b5 is flat 5            C7b5    -> C E Gb Bb
+9 for small hands       C9      -> E G C D
 9 can be replaced by 7  C9 <=> C7
 sustain means 3 -> 4    Csus    -> C F G (popular with Uncle Michael songs)
 anything above 9 can be ignored
